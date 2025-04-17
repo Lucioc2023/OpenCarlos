@@ -11,10 +11,10 @@ namespace Open.Data
         public DbSet<Shoe> Shoes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-SDF1NAA\\SQLEXPRESS; Initial Catalog=LibraryDb; Trusted_Connection=true; TrustServerCertificate=true;")
-                .EnableSensitiveDataLogging()//Permite ver los valores en las consultas
-                .LogTo(Console.WriteLine, LogLevel.Information)
-                .UseLazyLoadingProxies(false);
+            optionsBuilder.UseSqlServer("Data Source=.; Initial Catalog=OpenDB; Trusted_Connection=true; TrustServerCertificate=true;");
+                //.EnableSensitiveDataLogging()//Permite ver los valores en las consultas
+                //.LogTo(Console.WriteLine, LogLevel.Information)
+                //.UseLazyLoadingProxies(false);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
